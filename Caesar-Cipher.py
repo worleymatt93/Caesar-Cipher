@@ -5,25 +5,25 @@ alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n'
             'v', 'w', 'x', 'y', 'z']
 
 
-def caesar(original_text, shift_amount, cypher_direction):
-    cypher_text = ""
+def caesar(original_text, shift_amount, cipher_direction):
+    cipher_text = ""
     for letter in original_text:
         if letter not in alphabet:
-            cypher_text += letter
+            cipher_text += letter
             continue
 
         letter_position = alphabet.index(letter)
         shifted_position = 0
 
-        if cypher_direction == "encode":
+        if cipher_direction == "encode":
             shifted_position = letter_position + shift_amount
-        elif cypher_direction == "decode":
+        elif cipher_direction == "decode":
             shifted_position = letter_position - shift_amount
 
         shifted_position %= len(alphabet)
-        cypher_text += alphabet[shifted_position]
+        cipher_text += alphabet[shifted_position]
 
-    print(f"Your {cypher_direction}d message is: {cypher_text}")
+    print(f"Your {cipher_direction}d message is: {cipher_text}")
 
 # TODO-3: Can you figure out a way to restart the cipher program?
 
